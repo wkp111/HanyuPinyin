@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_items">
+        <item>@string/mandarin</item>
+        <item>@string/en_us</item>
+        <item>@string/cantonese</item>
+        <item>@string/lmz</item>
+    </string-array>
+</resources>

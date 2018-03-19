@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical"
+    tools:context="com.wkp.hanyupinyin.view.activity.MainActivity">
+
+    <include layout="@layout/activity_base_title"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="@dimen/dp_5"
+        app:counterEnabled="true"
+        app:hintEnabled="false"
+        app:counterMaxLength="@integer/int_400"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_text"
+            android:layout_margin="@dimen/dp_5"
+            android:padding="@dimen/dp_2"
+            android:background="@android:color/white"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:textSize="@dimen/sp_14"
+            android:gravity="start"
+            android:hint="@string/please_input_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_300"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:clickable="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:src="@drawable/btn_image_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_voice"
+            android:clickable="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/btn_voice_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_scan"
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:src="@drawable/btn_scan_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_2"
+        android:layout_marginRight="@dimen/dp_2"
+        android:background="@drawable/btn_bg_selector"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@android:color/white"
+        android:text="@string/pinyin_voice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

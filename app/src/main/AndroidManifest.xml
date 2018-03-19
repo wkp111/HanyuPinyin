@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.wkp.hanyupinyin">
+
+    <!--百度文本识别-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 声明使用Camera意图 -->
+    <uses-feature android:name="android.hardware.camera"/>
+    <!-- 声明调用Camera自动对焦功能 -->
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+
+    <!--讯飞语音-->
+    <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!--读取网络信息状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--获取当前wifi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!--允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <!--读取手机信息权限 -->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <!--读取联系人权限，上传联系人需要用到此权限 -->
+    <!--<uses-permission android:name="android.permission.READ_CONTACTS"/>-->
+    <!--外存储写权限，构建语法需要用到此权限 -->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    <!--外存储读权限，构建语法需要用到此权限 -->
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
+    <!--配置权限，用来记录应用配置信息 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!--手机定位信息，用来为语义等功能提供定位，提供更精准的服务-->
+    <!--定位信息是敏感信息，可通过Setting.setLocationEnable(false)关闭定位请求 -->
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+    <!--如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 -->
+    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+
+    <!--有道翻译-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!-- 获取WiFi状态 -->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!-- 获取网络信息状态，如当前的网络连接是否有效 -->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!-- 读取手机状态 phone group -->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!-- 往SDCard读写数据权限   storage group -->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+
+    <application
+        android:name=".view.application.MainApplication"
+        tools:replace="android:icon"
+        android:allowBackup="true"
+        android:icon="@drawable/chinese_spelling"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--多渠道打包-->
+        <meta-data android:name="UMENG_CHANNEL" android:value="tencent"/>
+
+        <!--广告Activity-->
+        <activity android:name=".view.activity.ADActivity"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!--主界面-->
+        <activity android:name=".view.activity.MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!--详情界面-->
+        <activity android:name=".view.activity.DetailActivity" android:screenOrientation="portrait"/>
+
+        <!-- 有米SDK为了兼容Android N应用间共享文件行为变更而需要配置的FileProvider-->
+        <!-- 这里主要为授予有米SDK拥有打开apk安装界面的功能-->
+        <!-- 请务必修改 android:authorities 为贵应用的标识，一般为 包名.fileProvider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.youmi.android.addemo.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider" />
+        </provider >
+
+    </application>
+
+</manifest>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/activity_base_title"/>
+
+    <com.wkp.sticklayout_lib.widget.StickLayout
+        android:background="@color/light_gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_pinyin_title"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_16"
+            android:text="@string/text_pinyin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.wkp.hanyupinyin.view.widget.PinyinText
+            android:id="@+id/tv_pinyin_content"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_14"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_en_title"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_16"
+            android:text="@string/text_trans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_trans_error"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_14"
+            android:text="@string/no_chinese"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.wkp.hanyupinyin.view.widget.NoScrollListView
+            android:id="@+id/lv_trans_content"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_sound_title"
+            app:wkp_stick="true"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_16"
+            android:text="@string/text_sound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.wkp.hanyupinyin.view.widget.NoScrollListView
+            android:id="@+id/lv_sound_content"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.wkp.hanyupinyin.view.widget.NoScrollListView>
+
+    </com.wkp.sticklayout_lib.widget.StickLayout>
+
+</LinearLayout>
