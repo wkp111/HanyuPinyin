@@ -53,9 +53,10 @@
 
     <application
         android:name=".view.application.MainApplication"
-        tools:replace="android:icon"
+        tools:replace="android:icon,android:roundIcon"
         android:allowBackup="true"
         android:icon="@drawable/chinese_spelling"
+        android:roundIcon="@drawable/chinese_spelling"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

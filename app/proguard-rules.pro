@@ -36,6 +36,12 @@
 #讯飞语音
 -keep class com.iflytek.**{*;}
 -keepattributes Signature
+-keep public class com.wkp.hanyupinyin.model.bean.VoiceResult{ *; }
+-keep public class com.wkp.hanyupinyin.model.bean.WsBean{ *; }
+-keep public class com.wkp.hanyupinyin.model.bean.CwBean{ *; }
+-keep public class com.wkp.hanyupinyin.model.bean.TransResult{ *; }
+-keep public class com.wkp.hanyupinyin.model.bean.TransResultBean{ *; }
+-keep public class com.wkp.hanyupinyin.model.utils.IFlyUtil{ *; }
 
 #有道翻译
 #-ignorewarnings
@@ -49,3 +55,6 @@
 
 #有米广告
 -keep public class com.mi.adtracker.MiAdTracker{ *; }
+
+#SweetAlert
+-keep public class cn.pedant.SweetAlert.Rotate3dAnimation{ *; }
